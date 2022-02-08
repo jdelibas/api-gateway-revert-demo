@@ -1,0 +1,136 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "ApiGatewayRevertDemoStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ApiGatewayRevertDemoStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ApiGatewayRevertDemoStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ApiGatewayRevertDemoStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/863a78f56df29af904ed6b282e7d389cad0170c09bd24993ba3ae4c4b99a95c9.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ApiGatewayRevertDemoStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ApiGatewayRevertDemoStack.assets"
+      ],
+      "metadata": {
+        "/ApiGatewayRevertDemoStack/fn/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "fnServiceRole5D180AFD"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/fn/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "fn5FF616E3"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/logs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "logs0B6081B1"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiC5611D27"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiCloudWatchRole9B4F6A99"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiAccountAAA74549"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiDeployment4A8950A2034889ba362425b3742e96e99aaa9df0"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/DeploymentStage.default/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiDeploymentStagedefaultF1D43B86"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiEndpoint7C8BD49C"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiproxy09DF824C"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/restapi/Default/{proxy+}/any/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "restapiproxyany440B82FC"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ApiGatewayRevertDemoStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ApiGatewayRevertDemoStack"
+    }
+  }
+}
